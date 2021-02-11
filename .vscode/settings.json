@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    //disable default javascript validator replaced by eslint
+"javascript.validate.enable": false,
+"typescript.check.workspaceVersion": false
+} 

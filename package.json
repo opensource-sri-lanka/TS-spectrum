@@ -1,0 +1,32 @@
+{
+  "name": "ts-node-template",
+  "version": "1.0.0",
+  "description": "This sample shows basic class definition and instantiation.",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm run build -s",
+    "test": "tape build/tests/index.js | faucet",
+    "clean": "rimraf build",
+    "prebuild": "npm run clean -s",
+    "build:ts": "tsc",
+    "build": "run-p build:*",
+    "watch:ts": "npm run build:ts -- -w",
+    "watch": "run-p watch:*",
+    "server": "nodemon build/app.js -w build",
+    "prestart": "npm run build -s",
+    "start": "run-p -s watch server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/tape": "^4.2.28",
+    "faucet": "0.0.1",
+    "nodemon": "^1.9.2",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.5.2",
+    "tape": "^4.6.2",
+    "tslint-config-standard": "^6.0.1",
+    "typescript": "^2.1.0"
+  },
+  "dependencies": {}
+}
