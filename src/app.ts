@@ -6,6 +6,8 @@ import * as express from "express"; // Express
 
 const p1 = new Person('Javascript ES6 Class, no types')
 const g1 = new Greeter('Typescript Class, has types')
+
+// socket.io variables
 const app = express();
 var http = require("http").Server(app);
 
