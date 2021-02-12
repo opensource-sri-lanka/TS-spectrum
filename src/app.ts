@@ -1,7 +1,8 @@
 
-import Person from './person' // Javascript Class
-import Greeter from './greeter/greeter' // Typescript Class
+import Person from './person'; // Javascript Class
+import Greeter from './greeter/greeter'; // Typescript Class
 import * as express from "express"; // Express
+import * as socket from "socket.io"; // Socket io
 
 
 const p1 = new Person('Javascript ES6 Class, no types')
