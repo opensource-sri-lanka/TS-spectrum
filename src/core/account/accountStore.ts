@@ -17,4 +17,9 @@ export default class AccountStore {
         }
         return null
     }
+
+    // returns whether a account in AccountStore instance contains the userName
+    userNameUsed(userName: String) {
+        return typeof (this.findAccountWithName(userName)) != null;
+    }
 }
