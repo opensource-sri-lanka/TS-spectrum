@@ -10,9 +10,10 @@ export default class Account {
         this.publicKey = publicKey
     }
 
-    savePassword(password: String, rejectedCallback: ((reason: any) => (PromiseLike<void> | void)) | undefined | null) {
+    savePassword(password: String, rejectedCallback: ((reason: any) => (PromiseLike<void> | void)) | undefined | null, doneCallback) {
         createHash(password).then((value => {
             this.passwordHash = value
+            doneCallback()
         }), rejectedCallback)
     }
 
