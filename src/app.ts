@@ -19,6 +19,10 @@ let io = require("socket.io")(http);
 console.log(p1.sayName())
 console.log(g1.greet())
 
+// Connect user to web socket
+io.on("connection", function (socket: any) {
+    console.log("a user connected");
+});
 
 // Config server listening port
 const server = http.listen(3000, function () {
