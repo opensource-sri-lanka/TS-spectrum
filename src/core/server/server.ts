@@ -1,5 +1,6 @@
 import * as express from "express"; // Express
-import * as socket from "socket.io"; // Socket io
+import * as socket from "socket.io";
+import {Socket} from "socket.io"; // Socket io
 
 // socket.io variables
 const app = express();
@@ -9,7 +10,8 @@ var http = require("http").Server(app);
 let io = require("socket.io")(http);
 
 // Connect user to web socket
-io.on("connection", function (socket: any) {
+io.on("connection", function (socket: Socket) {
+
     console.log("a user connected");
 });
 
