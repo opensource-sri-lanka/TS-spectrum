@@ -1,5 +1,6 @@
 import Account from "./account";
 
+// this class will be used to store multiple accounts
 export default class AccountStore {
     accounts: Account[]
 
