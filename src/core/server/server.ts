@@ -17,14 +17,16 @@ let io = require("socket.io")
 export class Server {
     accounts: AccountStore
     io: any
+    server: any
     constructor() {
         this.accounts = new AccountStore()
-        this.io = io(http)
+        this.io = new io.Server()
+        this.server = http.createServer()
+        this.io.attach(this.server)
     }
 
     start(addr: String) {
         // Connect user to web socket
-        console.log("listening on *:8080");
         this.io.on("connection", function (socket: Socket) {
             let acc: Account
             let loggedIn = false
@@ -71,7 +73,7 @@ export class Server {
         });
 
         // Config server listening port
-        const server = this.io.listen(addr, function () {
+        const server = this.server.listen(addr, function () {
             console.log("listening on " + addr);
         });
     }
