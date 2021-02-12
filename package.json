@@ -17,7 +17,7 @@
     "start": "run-p -s watch server"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/tape": "latest",
     "faucet": "latest",
