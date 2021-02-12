@@ -10,10 +10,12 @@ export default class Account {
     }
 
     savePassword(password: String) {
+        // TODO: add password hashing stuff here
         this.passwordHash = password
     }
 
-    checkPassword() {
+    checkPassword(password: String) {
+        // TODO: add password verification stuff here
         return true
     }
 }
