@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "bcryptjs": "latest",
+    "express": "^4.17.1",
     "socket.io": "latest"
   }
 }
