@@ -28,5 +28,7 @@
     "tslint-config-standard": "latest",
     "typescript": "latest"
   },
-  "dependencies": {}
+  "dependencies": {
+    "socket.io": "latest"
+  }
 }
