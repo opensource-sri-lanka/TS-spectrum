@@ -1,6 +1,6 @@
 import * as express from "express"; // Express
 import * as socket from "socket.io";
-import {Socket} from "socket.io";
+import { Socket } from "socket.io";
 import AccountStore from "../account/accountStore";
 import Account from "../account/account";
 import account from "../account/account";
@@ -22,14 +22,15 @@ export class Server {
         this.io = io(http)
     }
 
-    start(addr:String) {
+    start(addr: String) {
         // Connect user to web socket
+        console.log("listening on *:3000");
         this.io.on("connection", function (socket: Socket) {
             let acc: Account
             let loggedIn = false
 
 
-            socket.on("login", ({useName, password})=>{
+            socket.on("login", ({ useName, password }) => {
                 if (useName !== undefined && password !== undefined) {
                     let a = this.accounts.findAccountWithName(useName)
                     if (a !== null) {
@@ -50,11 +51,11 @@ export class Server {
                 }
             })
 
-            socket.on("signup", ({username, password, publicKey}) => {
+            socket.on("signup", ({ username, password, publicKey }) => {
                 if (username !== undefined && password !== undefined && publicKey !== undefined) {
                     if (this.accouts.userNameUsed(username) == false) {
                         let a = new Account(username, publicKey)
-                        a.savePassword(password,  () => {
+                        a.savePassword(password, () => {
                             socket.emit("signup_error")
                         }, () => {
                             this.accouts.addAccount(a)
