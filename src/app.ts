@@ -15,6 +15,8 @@ var http = require("http").Server(app);
 console.log(p1.sayName())
 console.log(g1.greet())
 
+
+// Config server listening port
 const server = http.listen(3000, function () {
     console.log("listening on *:3000");
 });
