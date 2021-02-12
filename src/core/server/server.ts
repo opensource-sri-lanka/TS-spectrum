@@ -24,7 +24,7 @@ export class Server {
 
     start(addr: String) {
         // Connect user to web socket
-        console.log("listening on *:3000");
+        console.log("listening on *:8080");
         this.io.on("connection", function (socket: Socket) {
             let acc: Account
             let loggedIn = false
