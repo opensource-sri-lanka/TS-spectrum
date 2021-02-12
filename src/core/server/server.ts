@@ -71,7 +71,7 @@ export class Server {
 
         // Config server listening port
         const server = this.io.listen(addr, function () {
-            console.log("listening on *:3000");
+            console.log("listening on " + addr);
         });
     }
 }
