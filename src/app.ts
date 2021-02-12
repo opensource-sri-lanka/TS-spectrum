@@ -11,6 +11,9 @@ const g1 = new Greeter('Typescript Class, has types')
 // socket.io variables
 const app = express();
 var http = require("http").Server(app);
+// set up socket.io and bind it to our
+// http server.
+let io = require("socket.io")(http);
 
 
 console.log(p1.sayName())
