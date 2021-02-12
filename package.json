@@ -2,7 +2,7 @@
   "name": "ts-node-template",
   "version": "1.0.0",
   "description": "This sample shows basic class definition and instantiation.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "pretest": "npm run build -s",
     "test": "tape build/tests/index.js | faucet",
@@ -31,6 +31,7 @@
   "dependencies": {
     "bcryptjs": "latest",
     "express": "^4.17.1",
-    "socket.io": "latest"
+    "socket.io": "latest",
+    "ts-node-dev": "^1.1.1"
   }
 }
